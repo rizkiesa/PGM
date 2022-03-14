@@ -32,7 +32,7 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo   = RouteServiceProvider::HOME;
-    protected $url          = 'dashboard/5/Summary%20Dashboard/eyJpdiI6IjRSbXBqYnRWRS82Nk5jaUp4SlpOcEE9PSIsInZhbHVlIjoiSzdKWTE5SENLV1NPMEtHOFJsbUZOZz09IiwibWFjIjoiYmU3NTA0ODVmMTgyYWMzNTczYWNkYWVmYWY5YTc1NjU3OGMyMmFhMmFjMGI1Nzc2ODdlZTgwM2QyZDg1MGU3NCIsInRhZyI6IiJ9';
+    protected $url          = 'dashboard/';
     /**
      * Create a new controller instance.
      *

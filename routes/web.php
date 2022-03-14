@@ -51,6 +51,7 @@ use App\Http\Controllers\MonitoringController;
 // Route::get('/', function () {
 //   return view('login');
 // });
+Route::get('/', [DashboardController::class, 'index']);
 
 Auth::routes(['verify' => true]);
 // AUTH By Farhan
