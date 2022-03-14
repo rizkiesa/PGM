@@ -307,9 +307,9 @@ $dailyChannel = 'daily-instruments-channel';
             </div>
         </div>
     </div>
+    </script>
 </section>
 {{-- end of financial-L1 table and chart --}}
-
 {{-- <section id="daily-financial-L1_table_chart" style="display: none;">
     <div class="card w-100">
         <div class="card-header border-bottom">
@@ -324,7 +324,6 @@ $dailyChannel = 'daily-instruments-channel';
         </div>
       </div>
         </div>
-
         <div class="card-body">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-7 col-12">
@@ -351,7 +350,6 @@ $dailyChannel = 'daily-instruments-channel';
     </div>
     
 </section> --}}
-
 {{-- <section id="daily-financial-L2_table_chart" style="display: none;">
     <div class="card w-100">
         <div class="card-header border-bottom">
@@ -377,7 +375,6 @@ $dailyChannel = 'daily-instruments-channel';
                             background-color: #f8f8f8;
                             }
                         </style>
-
                         <table class="table details-ajax-{{ $dailyChannel }}-L2">
                             <tbody>
                                 <tr class="text-center">
@@ -462,9 +459,7 @@ $dailyChannel = 'daily-instruments-channel';
                                 </tr>
                             </tbody>
                             
-
                         </table>
-
                     </div>
                 </div>
                 
@@ -472,11 +467,10 @@ $dailyChannel = 'daily-instruments-channel';
         </div>
     </div>
     
-</section> --}}
+</section>
 @endsection
-
 @push('vendor-script')
-{{-- vendor files --}}
+// {{-- vendor files --}}
 <script src="{{ asset(mix('vendors/js/charts/apexcharts.min.js')) }}"></script>
 <script src="{{ asset(mix('vendors/js/extensions/toastr.min.js')) }}"></script>
 <script src="{{ asset(mix('vendors/js/tables/datatable/jquery.dataTables.min.js')) }}"></script>
@@ -498,24 +492,19 @@ $dailyChannel = 'daily-instruments-channel';
 <script>
     // DATATABLES
    
-
     var dt_ajax_table_L0 = $('.datatables-ajax-{{ $dailyChannel }}-L0'),
     dt_ajax_table_L1 = $('.datatables-ajax-{{ $dailyChannel }}-L1'),
     dataDetails = $('.details-ajax-{{ $dailyChannel }}-L2');
     //Setup Datatable
-
         //# # # # # # # # # # # # # # # # # # # # # #
         //                 Da # #tatable L0              #
         //# # # # # # # # # # # # # # # # # # # # # #
-
         //# # # # # # # # # # # # # # # # # # # #
         //                 Datatable L1              #
         //# # # # # # # # # # # # # # # # # # # # # #           
         
             
-
     
-
 </script>
 
 
