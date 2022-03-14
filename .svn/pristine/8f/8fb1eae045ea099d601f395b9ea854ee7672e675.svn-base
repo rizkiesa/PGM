@@ -1,0 +1,20 @@
+
+<script src="<?php echo e(asset(mix('vendors/js/vendors.min.js'))); ?>"></script>
+<script src="<?php echo e(asset(mix('vendors/js/ui/prism.min.js'))); ?>"></script>
+<?php echo $__env->yieldPushContent('vendor-script'); ?>
+<?php echo $__env->yieldContent('vendor-script'); ?>
+
+<script src="<?php echo e(asset(mix('js/core/app-menu.js'))); ?>"></script>
+<script src="<?php echo e(asset(mix('js/core/app.js'))); ?>"></script>
+<?php if($configData['blankPage'] === false): ?>
+<script src="<?php echo e(asset(mix('js/scripts/customizer.js'))); ?>"></script>
+<?php endif; ?>
+<script src="<?php echo e(asset('js/scripts/custom.js')); ?>"></script>
+<script src="<?php echo e(asset('/js/scripts/documentation.js')); ?>"></script>
+<script src="<?php echo e(asset('js/scripts/highchart.js')); ?>"></script>
+
+
+<?php echo $__env->yieldPushContent('page-script'); ?>
+<?php echo $__env->yieldContent('page-script'); ?>
+
+<?php /**PATH C:\laragon\www\pg_monitoring\resources\views/panels/scripts.blade.php ENDPATH**/ ?>

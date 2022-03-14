@@ -1,0 +1,144 @@
+
+
+<?php $__env->startSection('title', $page_title); ?>
+
+<?php $__env->startSection('vendor-style'); ?>
+
+<link rel="stylesheet" href="<?php echo e(asset(mix('vendors/css/charts/apexcharts.css'))); ?>">
+<link rel="stylesheet" href="<?php echo e(asset(mix('vendors/css/extensions/toastr.min.css'))); ?>">
+<link rel="stylesheet" href="<?php echo e(asset(mix('vendors/css/tables/datatable/dataTables.bootstrap4.min.css'))); ?>">
+<link rel="stylesheet" href="<?php echo e(asset(mix('vendors/css/tables/datatable/responsive.bootstrap4.min.css'))); ?>">
+<link rel="stylesheet" href="<?php echo e(asset(mix('vendors/css/tables/datatable/buttons.bootstrap4.min.css'))); ?>">
+<link rel="stylesheet" href="<?php echo e(asset(mix('vendors/css/tables/datatable/rowGroup.bootstrap4.min.css'))); ?>">
+<link rel="stylesheet" href="<?php echo e(asset(mix('vendors/css/pickers/flatpickr/flatpickr.min.css'))); ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/base/plugins/forms/pickers/form-flat-pickr.css')); ?>">
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('page-style'); ?>
+
+<link rel="stylesheet" href="<?php echo e(asset(mix('css/base/plugins/forms/pickers/form-flat-pickr.css'))); ?>">
+<link rel="stylesheet" href="<?php echo e(asset(mix('css/base/plugins/charts/chart-apex.css'))); ?>">
+
+<style>
+    tr {
+        cursor: pointer;
+    }
+</style>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<?php
+$headerSearch = 'Payment Gateway Monitoring';
+$dailyChannel = 'daily-instruments-channel';
+//$start_date = request()->get('startDate') == null ? $startDate : request()->get('startDate');
+//$end_date = request()->get('endDate') == null ? $endDate : request()->get('endDate');
+?>
+
+
+
+
+<section id="daily-financial-L0_table_chart" style="display: flex;">
+    <div class="card w-100">
+        <div class="card-header border-bottom">
+            <div class="head-title ">
+                <h4 class="mb-0"><?php echo e($headerSearch); ?> Table</h4>
+            </div>
+        </div>
+        
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="pt-2 table-responsive">
+                        <table class="table table-bordered datatables-ajax-<?php echo e($dailyChannel); ?>-L0">
+                            <thead>
+                                <tr class="text-center">
+                                    <th rowspan="2" style="vertical-align: middle">TR ID</th>
+                                    <th colspan="2">IPG</th>
+                                    <th colspan="2">Data Surrounding</th>
+                                    <th colspan="2">Host</th>
+                                    <th rowspan="2"style="vertical-align: middle">Settlement Status</th>
+
+                                </tr>
+                                <tr class="text-center">
+                                    <th>TR</th>
+                                    <th>SR</th>
+                                    <th>TR</th>
+                                    <th>SR</th>
+                                    <th>TR</th>
+                                    <th>SR</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody class="text-center">
+                                <td>12302131</td>
+                                <td>1 </td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-5 col-12">
+                    <div class="pt-2" id="L0-chart-<?php echo e($dailyChannel); ?>"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startPush('vendor-script'); ?>
+
+<script src="<?php echo e(asset(mix('vendors/js/charts/apexcharts.min.js'))); ?>"></script>
+<script src="<?php echo e(asset(mix('vendors/js/extensions/toastr.min.js'))); ?>"></script>
+<script src="<?php echo e(asset(mix('vendors/js/tables/datatable/jquery.dataTables.min.js'))); ?>"></script>
+<script src="<?php echo e(asset(mix('vendors/js/tables/datatable/datatables.bootstrap4.min.js'))); ?>"></script>
+<script src="<?php echo e(asset(mix('vendors/js/tables/datatable/dataTables.responsive.min.js'))); ?>"></script>
+<script src="<?php echo e(asset(mix('vendors/js/tables/datatable/responsive.bootstrap4.js'))); ?>"></script>
+<script src="<?php echo e(asset(mix('vendors/js/tables/datatable/datatables.checkboxes.min.js'))); ?>"></script>
+<script src="<?php echo e(asset(mix('vendors/js/tables/datatable/datatables.buttons.min.js'))); ?>"></script>
+<script src="<?php echo e(asset(mix('vendors/js/tables/datatable/jszip.min.js'))); ?>"></script>
+<script src="<?php echo e(asset(mix('vendors/js/tables/datatable/vfs_fonts.js'))); ?>"></script>
+<script src="<?php echo e(asset(mix('vendors/js/tables/datatable/buttons.html5.min.js'))); ?>"></script>
+<script src="<?php echo e(asset(mix('vendors/js/tables/datatable/buttons.print.min.js'))); ?>"></script>
+<script src="<?php echo e(asset(mix('vendors/js/tables/datatable/dataTables.rowGroup.min.js'))); ?>"></script>
+<script src="<?php echo e(asset(mix('vendors/js/pickers/flatpickr/flatpickr.min.js'))); ?>"></script>
+<?php $__env->stopPush(); ?>
+<?php $__env->startPush('page-script'); ?>
+
+
+<script>
+    // DATATABLES
+   
+
+    var dt_ajax_table_L0 = $('.datatables-ajax-<?php echo e($dailyChannel); ?>-L0'),
+    dt_ajax_table_L1 = $('.datatables-ajax-<?php echo e($dailyChannel); ?>-L1'),
+    dataDetails = $('.details-ajax-<?php echo e($dailyChannel); ?>-L2');
+    //Setup Datatable
+
+        //# # # # # # # # # # # # # # # # # # # # # #
+        //                 Datatable L0              #
+        //# # # # # # # # # # # # # # # # # # # # # #
+       
+        //# # # # # # # # # # # # # # # # # # # # # #
+        //                 Datatable L1              #
+        //# # # # # # # # # # # # # # # # # # # # # #           
+        
+            
+
+    
+
+</script>
+
+
+<?php $__env->stopPush(); ?>
+<?php echo $__env->make('layouts/contentLayoutMaster', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\pg_monitoring\resources\views/monitoring/index.blade.php ENDPATH**/ ?>

@@ -1,0 +1,48 @@
+{
+    "menu": [{
+            "url": "/",
+            "name": "Dashboard",
+            "icon": "home",
+            "slug": "dashboard"
+        },
+        {
+            "navheader": "Sys",
+            "slug": "",
+            "permission": ["master-account.index"]
+
+        },
+        {
+            "url": "master-accounts",
+            "name": "Master Rekening",
+            "icon": "clipboard",
+            "slug": "master-accounts",
+            "permission": "master-account.index"
+        },
+        {
+            "navheader": "Auth Apps",
+            "slug": "",
+            "permission": ["permission.index", "role.index", "user.index"]
+        },
+        {
+            "url": "permissions",
+            "name": "Permission",
+            "icon": "command",
+            "slug": "permissions",
+            "permission": "permission.index"
+        },
+        {
+            "url": "roles",
+            "name": "Role",
+            "icon": "briefcase",
+            "slug": "roles",
+            "permission": "role.index"
+        },
+        {
+            "url": "users",
+            "name": "User",
+            "icon": "user-check",
+            "slug": "users",
+            "permission": "user.index"
+        }
+    ]
+}

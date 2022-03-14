@@ -1,0 +1,13 @@
+<?php echo Form::open(array('route' => 'permissions.store','method'=>'POST','id' => 'MyForm')); ?>
+
+
+<?php echo e(Form::inputText('Permission: ', 'permission', null, null, ['placeholder' => 'permission name', 'required'])); ?>
+
+
+<button onclick="CheckValidation();" type="submit" id="btn-submit" class="btn font-weight-bold btn-block btn-primary">
+        Submit
+</button>
+
+<?php echo Form::close(); ?>
+
+<?php /**PATH C:\laragon\www\pg_monitoring\resources\views/auth-app/permission/create.blade.php ENDPATH**/ ?>

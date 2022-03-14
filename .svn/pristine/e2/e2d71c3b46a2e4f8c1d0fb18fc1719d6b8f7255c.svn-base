@@ -1,0 +1,12 @@
+<div class="form-group">
+    <?php
+        $cek = 'form-control ' . $class;
+        if($errors->has($name)){
+            $cek = 'form-control ' . $class . isValid($errors->has($name)) ;
+        }
+    ?>
+    <strong><?php echo e($label); ?></strong>
+    <?php echo e(Form::text($name, $value, array_merge(['class' => $cek, 'id' => $name], $attributes))); ?>
+
+    <p class="invalid-feedback"><?php echo e($errors->first($name)); ?></p>
+</div><?php /**PATH C:\laragon\www\pg_monitoring\resources\views/component/form/text.blade.php ENDPATH**/ ?>

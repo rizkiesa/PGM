@@ -1,0 +1,57 @@
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Form;
+// use Illuminate\Auth\Notifications\VerifyEmail;
+// use Illuminate\Notifications\Messages\MailMessage;
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        
+        // DEFINE FORM
+        // array 1 : label
+        // array 2 : nama & id
+        // array 3 : value isinya
+        // array 4 : class
+        // array 5 : attribute
+        Form::component('textRow', 'layout.component.form.textRow', [
+            'label',            // 1
+            'name',             // 2
+            'value' => null,    // 3
+            'class',            // 4
+            'attributes' => []  // 5
+        ]);
+        Form::component('inputText',        'component.form.text',       ['label', 'name', 'value' => null, 'class',  'attributes' => []]);
+        Form::component('inputTextarea',    'component.form.textarea',   ['label', 'name', 'value' => null, 'class',  'attributes' => []]);
+        Form::component('inputPassword',    'component.form.password',   ['label', 'name', 'value' => null, 'class',  'attributes' => []]);
+        Form::component('inputNumber',      'component.form.number',     ['label', 'name', 'value' => null, 'class',  'attributes' => []]);
+        Form::component('inputSelect',      'component.form.select',     ['label', 'name', 'value' => [], 'class',  'attributes' => [], 'default' => null]);
+        // dd(auth()->user());
+
+        // VerifyEmail::toMailUsing(function ($notifiable, $url) {
+        //     return (new MailMessage)
+        //         ->subject('Verify Email Address')
+        //         ->line('Click the button below to verify your email address.')
+        //         // ->view('auth.verify')
+        //         ->action('Verify Email Address', $url);
+        // });
+    }
+}

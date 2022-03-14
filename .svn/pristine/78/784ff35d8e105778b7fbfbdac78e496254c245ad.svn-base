@@ -1,0 +1,42 @@
+<?php
+$configData = Helper::applClasses();
+?>
+
+
+<?php $__env->startSection('title', 'Not Authorized'); ?>
+
+<?php $__env->startSection('page-style'); ?>
+<link rel="stylesheet" href="<?php echo e(asset(mix('css/base/pages/page-misc.css'))); ?>">
+<?php $__env->stopSection(); ?>
+<style>
+    .content{
+        margin-left: 0 !important;
+    }
+    html .content.app-content {
+        padding: 0 !important;
+    }
+</style>
+<?php $__env->startSection('content'); ?>
+<!-- Not authorized-->
+<div class="misc-wrapper">
+  
+  <div class="misc-inner p-2 p-sm-3">
+    <div class="w-100 text-center">
+      <h2 class="mb-1">You are not authorized! 🔐</h2>
+      
+      <a class="btn btn-primary mb-1 btn-sm-block" href="<?php echo e(url('/')); ?>">Back</a>
+      <br>
+      <?php if($configData['theme'] === 'dark'): ?>
+      <img class="img-fluid" src="<?php echo e(asset('images/pages/not-authorized-dark.svg')); ?>" alt="Not authorized page" />
+      <?php else: ?>
+      <img class="img-fluid" src="<?php echo e(asset('images/pages/not-authorized.svg')); ?>" alt="Not authorized page" />
+      <?php endif; ?>
+    </div>
+  </div>
+</div>
+<!-- / Not authorized-->
+</section>
+<!-- maintenance end -->
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts/fullLayoutMaster', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\pg_monitoring\resources\views/errors/404.blade.php ENDPATH**/ ?>

@@ -1,0 +1,118 @@
+
+
+<?php $__env->startSection('title', $page_title); ?> 
+
+<?php $__env->startSection('content'); ?>
+<div class="row">
+    <div class="col-sm-12 col-xl-8 offset-xl-2">
+        <section id="basic-datatable">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header border-bottom p-1">
+                            <div class="head-label">
+                                <h4 class="mb-0">Role Management</h4>
+                            </div>
+                            <?php echo e(BackButton($route)); ?>
+
+                        </div>
+                        <div class="card-body">
+                            <?php echo Form::model($role, ['method' => 'PATCH','route' => ['roles.update', $role->id], 'id' => 'MyForm']); ?>
+
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>Name:</strong>
+                                        <?php if($role->id != '2'): ?>
+                                            <?php echo Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')); ?>
+
+                                        <?php else: ?>
+                                            <?php echo Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control', 'readonly')); ?>
+
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>Permission:</strong>
+                                        <br />
+                                        <table class="table table-bordered">
+                                            <?php
+                                                $array = [];
+                                                $i= 0;
+                                            ?>
+                                            <?php $__currentLoopData = $permission; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <?php
+                                                    $key = explode('.', $value->name);
+                                                    $key = $key[0];
+
+                                                    $arr[$key][$value->id] = $value->name;
+                                                    $i++;
+                                                ?>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                                            <thead>
+                                                <tr>
+                                                    <th class="bg-dark text-center" width='50px'><input type="checkbox" onchange="checkAll(this)" name="chk[]" > </th>
+                                                    <th class="bg-dark text-white">Check All Permission</th>
+                                                </tr>
+                                            </thead>
+
+                                            <?php $__currentLoopData = $arr; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <thead>
+                                                    <tr>
+                                                        <th class="bg-dark text-white" colspan="2">[ <?php echo e(strtoupper($key)); ?> ] Permission</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <?php $__currentLoopData = $item; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $keys => $val): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-center">
+                                                                    <?php echo e(Form::checkbox('permission[]', $val, in_array($keys, $rolePermissions) ? true : false, array('class' => 'name'))); ?>
+
+                                                            </td>
+                                                            <td><?php echo e($val); ?></td>
+                                                        </tr>
+                                                    </tbody>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary data-submit mr-1">Submit</button>
+                            <?php echo Form::close(); ?>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/ Basic table -->
+    </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startPush('page-script'); ?>
+    <script>
+    function checkAll(ele) {
+        var checkboxes = document.getElementsByTagName('input');
+        if (ele.checked) {
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].type == 'checkbox'  && !(checkboxes[i].disabled) ) {
+                    checkboxes[i].checked = true;
+                }
+            }
+        } else {
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].type == 'checkbox') {
+                    checkboxes[i].checked = false;
+                }
+            }
+        }
+    }
+    </script>
+<?php $__env->stopPush(); ?>
+
+<?php echo $__env->make('layouts/contentLayoutMaster', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\pg_monitoring\resources\views/auth-app/role/edit.blade.php ENDPATH**/ ?>

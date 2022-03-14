@@ -1,0 +1,43 @@
+- ACL Spatie            : https://www.itsolutionstuff.com/post/laravel-8-user-roles-and-permissions-tutorialexample.html
+- DataTtable Yajra      : https://github.com/yajra/laravel-datatables
+                        : composer require yajra/laravel-datatables:^1.5
+- Doc Vuexy             : https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation/documentation-laravel-acl.html 
+- laravel-debugbar      : https://github.com/barryvdh/laravel-debugbar
+- SVG Icon              : https://github.com/blade-ui-kit/blade-icons
+- HTML Collection       : https://laravelcollective.com/docs/6.x/html
+- Nested Array          : http://creative-punch.net/2014/01/creating-nested-array-items-parent-ids/
+- OCR                   : https://reposhub.com/php/miscellaneous/alimranahmed-LaraOCR.html
+- ApexChart             : https://apexcharts.com/javascript-chart-demos/pie-charts/simple-donut/
+- Command Doc           : https://ourcodeworld.com/articles/read/248/how-to-create-a-custom-console-command-artisan-for-laravel-5-3
+
+#CATATAN MIGRASI GIT 
+
+ROLE & PERMISSION 
+-Check vendor Role & Permission 
+    tambahkan UUID agar otomatis membaca UUID bukan id
+    
+    ROLE        : C:\NEW LARAVEL\Project\dev_vuexy_laravel\vendor\spatie\laravel-permission\src\Models\Role.php
+    PERMISSION  : C:\NEW LARAVEL\Project\dev_vuexy_laravel\vendor\spatie\laravel-permission\src\Models\Permission.php
+
+-SVG 
+C:\NEW LARAVEL\Project\dev_vuexy_laravel\vendor\blade-ui-kit\blade-icons\src\Svg.php 
+    ubah 
+        private $contents 
+    ke 
+        public $contents 
+
+- Auto Permission 
+    Controller -r 
+
+    protected function parse()
+    {
+         // otomatisasi permission jika jenisnya resource by farhan
+        // dd($this->tokens); 
+        if($this->tokens){
+            savePermission($this->tokens);
+        }
+
+
+    PATH: C:\NEW LARAVEL\Project\dev_vuexy_laravel\vendor\symfony\console\Input\ArgvInput.php
+
+- 2 Traits in one model 
